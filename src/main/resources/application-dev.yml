@@ -13,16 +13,16 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8
-    username: smuser
+    username: root
     password: 111111
 
 mybatis:
-  type-aliases-package: edu.sm.day02.dto
-#  sql문을 넣는곳
+  type-aliases-package: edu.sm.shoptemplatetest.dto # 패키지 변경
+  #  sql문을 넣는곳
   mapper-locations: classpath:/mapper/*.xml
   configuration:
-#    underscore를 camel style로 바꾸겠다 자동으로 매핑해준다
-      map-underscore-to-camel-case: true
+    #    underscore를 camel style로 바꾸겠다 자동으로 매핑해준다
+    map-underscore-to-camel-case: true
 
 logging:
   level:
