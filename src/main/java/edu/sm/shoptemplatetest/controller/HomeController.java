@@ -12,3 +12,4 @@ public class HomeController {
         return "index";  // index.jsp 렌더링
     }
 }
+    
