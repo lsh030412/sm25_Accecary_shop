@@ -21,6 +21,7 @@ public class LoginController {
     // 이름은 유니크
     @RequestMapping("/login")
     public String login(Model model) {
+        model.addAttribute("left", "nullleft");
         model.addAttribute("center", "login");
         return "index";
     }
@@ -44,6 +45,7 @@ public class LoginController {
         String next = "index";
         if(dbCust == null) {
             model.addAttribute("loginstate", "fail");
+            model.addAttribute("left", "nullleft");
             model.addAttribute("center", "login");
         }else {
             if(dbCust.getCustPwd().equals(pwd)) {
@@ -53,6 +55,7 @@ public class LoginController {
 
             }else{
                 model.addAttribute("loginstate", "fail");
+                model.addAttribute("left", "nullleft");
                 model.addAttribute("center", "login");
             }
         }
@@ -61,6 +64,7 @@ public class LoginController {
     }
     @RequestMapping("/register")
     public String register(Model model) {
+        model.addAttribute("left", "nullleft");
         model.addAttribute("center", "register");
         return "index";
     }

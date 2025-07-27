@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div class="col-sm-10">
+<div class="col-sm-12">
     <div style="padding-bottom:80px;">
     <div id="demo" class="carousel slide" data-ride="carousel" >
         <ul class="carousel-indicators">
@@ -31,7 +31,7 @@
     </div>
   <div class="card-columns">
     <div class="card bg-light">
-      <img class="card-img-top" height="200" src="/imgs/p1.jpg" alt="Card image">
+      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
       <div class="card-body">
         <h4 class="card-title">송하영</h4>
         <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="card bg-light">
-      <img class="card-img-top" height="200" src="/imgs/p1.jpg" alt="Card image">
+      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
       <div class="card-body">
           <h4 class="card-title">송하영</h4>
           <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="card bg-light">
-      <img class="card-img-top" height="200" src="/imgs/p9.jpg" alt="Card image">
+      <img class="card-img-top" height="400" src="/imgs/p9.jpg" alt="Card image">
       <div class="card-body">
           <h4 class="card-title">송하영</h4>
           <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="card bg-light">
-      <img class="card-img-top" height="200" src="/imgs/p1.jpg" alt="Card image">
+      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
       <div class="card-body">
           <h4 class="card-title">송하영</h4>
           <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="card bg-light">
-      <img class="card-img-top" height="200" src="/imgs/p1.jpg" alt="Card image">
+      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
       <div class="card-body">
           <h4 class="card-title">송하영</h4>
           <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
@@ -71,7 +71,7 @@
       </div>
     </div>
     <div class="card bg-light">
-      <img class="card-img-top" height="200" src="/imgs/p1.jpg" alt="Card image">
+      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
       <div class="card-body">
           <h4 class="card-title">송하영</h4>
           <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>

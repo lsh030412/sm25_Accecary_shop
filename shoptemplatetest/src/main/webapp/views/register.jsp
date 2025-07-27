@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%-- Register Page --%>
-<div class="col-sm-9">
+<div class="col-sm-12">
   <h2>Register Page</h2>
   <form action="/mainregisterimpl" method="post">
     <div class="form-group">

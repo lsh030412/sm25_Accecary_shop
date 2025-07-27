@@ -11,6 +11,7 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Model model) {
+        model.addAttribute("left", "nullleft");
         return "index";  // index.jsp 렌더링
     }
 
