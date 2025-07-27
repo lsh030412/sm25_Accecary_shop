@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="col-sm-12">
-    <div style="padding-bottom:80px;">
+  <div style="padding-bottom:80px;">
     <div id="demo" class="carousel slide" data-ride="carousel" >
         <ul class="carousel-indicators">
             <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -28,57 +28,23 @@
             <span class="carousel-control-next-icon"></span>
         </a>
     </div>
-    </div>
-  <div class="card-columns">
-    <div class="card bg-light">
-      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
-      <div class="card-body">
-        <h4 class="card-title">송하영</h4>
-        <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
-        <a href="#" class="btn btn-primary">See</a>
-      </div>
-    </div>
-    <div class="card bg-light">
-      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
-      <div class="card-body">
-          <h4 class="card-title">송하영</h4>
-          <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
-          <a href="#" class="btn btn-primary">See</a>
-      </div>
-    </div>
-    <div class="card bg-light">
-      <img class="card-img-top" height="400" src="/imgs/p9.jpg" alt="Card image">
-      <div class="card-body">
-          <h4 class="card-title">송하영</h4>
-          <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
-          <a href="#" class="btn btn-primary">See</a>
-      </div>
-    </div>
-    <div class="card bg-light">
-      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
-      <div class="card-body">
-          <h4 class="card-title">송하영</h4>
-          <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
-          <a href="#" class="btn btn-primary">See</a>
-      </div>
-    </div>
-    <div class="card bg-light">
-      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
-      <div class="card-body">
-          <h4 class="card-title">송하영</h4>
-          <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
-          <a href="#" class="btn btn-primary">See</a>
-      </div>
-    </div>
-    <div class="card bg-light">
-      <img class="card-img-top" height="400" src="/imgs/p1.jpg" alt="Card image">
-      <div class="card-body">
-          <h4 class="card-title">송하영</h4>
-          <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="500000" /></p>
-          <a href="#" class="btn btn-primary">See</a>
-      </div>
-    </div>
   </div>
+  <div class="col-sm-12">
+    <h2 style="margin-bottom: 40px;">모든 상품</h2>
+    <div class="card-columns">
+        <c:forEach var="p" items="#{plist}">
+            <div class="card bg-light">
+                <img class="card-img-top" height="400" src="/imgs/${p.productImg}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">${p.cateName}</h4>
+                    <h4 class="card-title">${p.productName}</h4>
+                    <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}" /></p>
+                    <a href="/productitem/see?id=${p.productId}" class="btn btn-primary">See</a>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+   </div>
 </div>
 
 <%--senter menue End--%>

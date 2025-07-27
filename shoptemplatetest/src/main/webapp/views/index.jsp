@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -38,12 +39,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">category</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/all_product">모든 제품</a></li>
+                                <li><a class="dropdown-item" href="/product/all_product">모든 제품</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="/watch">시계</a></li>
-                                <li><a class="dropdown-item" href="/bracelet">팔찌</a></li>
-                                <li><a class="dropdown-item" href="/necklace">목걸이</a></li>
-                                <li><a class="dropdown-item" href="/ring">반지</a></li>
+                                <li><a class="dropdown-item" href="/product/watch">시계</a></li>
+                                <li><a class="dropdown-item" href="/product/bracelet">팔찌</a></li>
+                                <li><a class="dropdown-item" href="/product/necklace">목걸이</a></li>
+                                <li><a class="dropdown-item" href="/product/ring">반지</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -65,30 +66,49 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/register">Register</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/cart">Cart</a>
-                                </li>
                             </ul>
                         </c:when>
                         <c:otherwise>
-                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/info">${sessionScope.logincust.custName}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/logout">Logout</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">관리자 메뉴</a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="/cust_get">cust get</a></li>
-                                            <li><hr class="dropdown-divider" /></li>
-                                            <li><a class="dropdown-item" href="/product/add">product add</a></li>
-                                            <li><a class="dropdown-item" href="/product/get">product get</a></li>
-                                        </ul>
+<%--                            로그인 o -> 관리자 | 일반 고객--%>
+                            <c:choose>
+<%--                                관리자 메뉴--%>
+                                <c:when test="${sessionScope.logincust.custId == 'admin'}">
+                                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/info">${sessionScope.logincust.custName}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/logout">Logout</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/cart">Cart</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">관리자 메뉴</a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li><a class="dropdown-item" href="/cust_get">cust get</a></li>
+                                                <li><hr class="dropdown-divider" /></li>
+                                                <li><a class="dropdown-item" href="/product/add">product add</a></li>
+                                                <li><a class="dropdown-item" href="/product/get">product get</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
-                                </li>
-                            </ul>
+                                </c:when>
+                                <c:otherwise>
+<%--                                    일반고객 메뉴--%>
+                                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/info">${sessionScope.logincust.custName}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/logout">Logout</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/cart">Cart</a>
+                                        </li>
+                                    </ul>
+                                </c:otherwise>
+                            </c:choose>
                         </c:otherwise>
                     </c:choose>
 

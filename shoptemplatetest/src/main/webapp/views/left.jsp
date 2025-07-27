@@ -10,19 +10,19 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/all_product">모든 상품</a>
+                <a class="nav-link" href="/product/all_product">모든 상품</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/watch">시계</a>
+                <a class="nav-link" href="/product/watch">시계</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/bracelet">팔찌</a>
+                <a class="nav-link" href="/product/bracelet">팔찌</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/necklace">목걸이</a>
+                <a class="nav-link" href="/product/necklace">목걸이</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/ring">반지</a>
+                <a class="nav-link" href="/product/ring">반지</a>
             </li>
         </ul>
 
