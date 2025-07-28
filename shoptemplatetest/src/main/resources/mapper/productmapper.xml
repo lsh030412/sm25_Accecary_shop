@@ -14,7 +14,7 @@
         order by p.product_id;
     </select>
     <insert id="insert" parameterType="Product">
-        INSERT INTO product VALUES (0, #{cateId}, #{productName},#{productPrice},#{discountRate}, #{productImg}, NOW(), NOW(), #{productQt})
+        INSERT INTO product VALUES (0, #{cateId}, #{productName},#{productPrice},#{discountRate}, #{productImg}, #{productExp}, NOW(), NOW())
     </insert>
     <update id="update" parameterType="Product">
         UPDATE product SET cate_id=#{cateId}, product_name=#{productName},product_price=#{productPrice},discount_rate=#{discountRate},product_img=#{productImg}, product_update=NOW() WHERE product_id=#{productId}
@@ -22,5 +22,10 @@
     <delete id="delete" parameterType="Integer">
         DELETE FROM product WHERE product_id=#{productId}
     </delete>
-
+    <select id="selectByCate" parameterType="int" resultType="Product">
+        SELECT * FROM product p
+        INNER JOIN cate c ON p.cate_id = c.cate_id
+        WHERE p.cate_id = #{cateId}
+        ORDER BY p.product_id DESC
+    </select>
 </mapper>

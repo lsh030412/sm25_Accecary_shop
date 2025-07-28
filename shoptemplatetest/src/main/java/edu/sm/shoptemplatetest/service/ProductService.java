@@ -58,4 +58,8 @@ public class ProductService implements SmService<Product, Integer> {
     public Product get(Integer s) throws Exception {
         return productRepository.select(s);
     }
+
+    public List<Product> getByCate(int cateId) throws Exception {
+        return productRepository.selectByCate(cateId);
+    }
 }

@@ -18,6 +18,6 @@ public class Product {
     private Timestamp productRegdate;
     private Timestamp productUpdate;
     private String cateName;
-    private int productQt;
+    private String productExp;
     private MultipartFile productImgFile;
 }

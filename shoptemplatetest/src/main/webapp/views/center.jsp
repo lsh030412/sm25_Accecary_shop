@@ -30,22 +30,24 @@
     </div>
   </div>
     <hr>
-  <div class="col-sm-12">
-    <h2 style="margin-bottom: 20px; margin-top: 20px; text-align: center;">모든 상품</h2>
-    <div class="card-columns">
+    <div class="row">
         <c:forEach var="p" items="#{plist}">
-            <div class="card bg-light">
-                <img class="card-img-top" height="400" src="/imgs/${p.productImg}" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">${p.cateName}</h4>
-                    <h4 class="card-title">${p.productName}</h4>
-                    <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}" /></p>
-                    <a href="/product/see?id=${p.productId}" class="btn btn-primary">See</a>
+            <div class="col-sm-4 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" height="300" src="/imgs/${p.productImg}" alt="Card image">
+                    <div class="card-body d-flex flex-column">
+                        <div>
+                            <h4 class="card-title">${p.cateName}</h4>
+                            <h4 class="card-title">${p.productName}</h4>
+                            <p class="card-text">
+                                <fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}" />
+                            </p>
+                        </div>
+                        <a href="/product/see?id=${p.productId}" class="btn btn-primary mt-auto">See</a>
+                    </div>
                 </div>
             </div>
         </c:forEach>
     </div>
-   </div>
 </div>
-
 <%--senter menue End--%>

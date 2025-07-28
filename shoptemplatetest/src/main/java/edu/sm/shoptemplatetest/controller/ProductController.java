@@ -82,30 +82,41 @@ public class ProductController {
                 product.getProductName(),
                 product.getProductPrice(),
                 product.getDiscountRate(),
-                product.getProductQt(),
+                product.getProductExp(),
                 product.getProductImgFile().getOriginalFilename());
         // html밑에 로그인
         productService.register(product);
         return "redirect:/product/get";
     }
     @RequestMapping("/watch")
-    public String watch(Model model) {
-        model.addAttribute("center",dir+"watch");
+    public String watch(Model model) throws Exception {
+        List<Product> list = productService.getByCate(10); // 0번이 watch
+        model.addAttribute("plist", list);
+        model.addAttribute("center", dir+"/watch");
         return "index";
     }
+
     @RequestMapping("/bracelet")
-    public String bracelet(Model model) {
-        model.addAttribute("center",dir+"bracelet");
+    public String bracelet(Model model) throws Exception {
+        List<Product> list = productService.getByCate(20);
+        model.addAttribute("plist", list);
+        model.addAttribute("center", dir+"/bracelet");
         return "index";
     }
+
     @RequestMapping("/necklace")
-    public String necklace(Model model) {
-        model.addAttribute("center",dir+"necklace");
+    public String necklace(Model model) throws Exception {
+        List<Product> list = productService.getByCate(30);
+        model.addAttribute("plist", list);
+        model.addAttribute("center", dir+"/necklace");
         return "index";
     }
+
     @RequestMapping("/ring")
-    public String ring(Model model) {
-        model.addAttribute("center",dir+"ring");
+    public String ring(Model model) throws Exception {
+        List<Product> list = productService.getByCate(40);
+        model.addAttribute("plist", list);
+        model.addAttribute("center", dir+"/ring");
         return "index";
     }
 
