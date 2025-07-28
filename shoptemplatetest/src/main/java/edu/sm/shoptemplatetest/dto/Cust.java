@@ -18,4 +18,5 @@ public class Cust {
     private Timestamp custUpdate;
     private String custPnum;
     private String custNick;
+    private int custMoney;
 }

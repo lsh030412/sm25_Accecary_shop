@@ -29,8 +29,9 @@
         </a>
     </div>
   </div>
+    <hr>
   <div class="col-sm-12">
-    <h2 style="margin-bottom: 40px;">모든 상품</h2>
+    <h2 style="margin-bottom: 20px; margin-top: 20px; text-align: center;">모든 상품</h2>
     <div class="card-columns">
         <c:forEach var="p" items="#{plist}">
             <div class="card bg-light">
@@ -39,7 +40,7 @@
                     <h4 class="card-title">${p.cateName}</h4>
                     <h4 class="card-title">${p.productName}</h4>
                     <p class="card-text"><fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}" /></p>
-                    <a href="/productitem/see?id=${p.productId}" class="btn btn-primary">See</a>
+                    <a href="/product/see?id=${p.productId}" class="btn btn-primary">See</a>
                 </div>
             </div>
         </c:forEach>

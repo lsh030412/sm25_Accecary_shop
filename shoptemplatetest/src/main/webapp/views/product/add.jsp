@@ -5,7 +5,7 @@
 
   <div class="col-sm-12">
     <h2>Product Add Page</h2>
-<%--    이미지까지 전송하려면 멀티머시기 해줘야 됨--%>
+
     <form action="/product/addimpl" method="post"enctype="multipart/form-data">
       <div class="form-group">
           <label for="cate">Cate Id:</label>
@@ -31,6 +31,7 @@
         <label for="pimg">Product Image:</label>
         <input type="file" class="form-control" placeholder="Enter image name" id="pimg" name="productImgFile">
       </div>
+
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
   </div>

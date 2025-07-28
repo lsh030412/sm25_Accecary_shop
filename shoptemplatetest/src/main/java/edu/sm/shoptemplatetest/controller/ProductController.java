@@ -63,11 +63,9 @@ public class ProductController {
     @RequestMapping("/see")
     public String see(Model model, @RequestParam("id") int id) throws Exception {
         Product product = null;
-//        해당아이디값 가져오고
         product = productService.get(id);
-//        p에 값을 넣는다
         model.addAttribute("p", product);
-        model.addAttribute("left", dir+"left");
+        model.addAttribute("left", "nullleft");
         model.addAttribute("center", dir+"see");
         return "index";
     }

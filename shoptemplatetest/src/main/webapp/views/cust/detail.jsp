@@ -27,7 +27,7 @@
   })
 </script>
 <%-- detail Page --%>
-<div class="col-sm-9">
+<div class="col-sm-12">
   <h2>Cust Detail Page</h2>
   <form id="cust_update_form">
     <div class="form-group">
@@ -49,6 +49,10 @@
     <div class="form-group">
       <label for="pnum">Phone number:</label>
       <input type="text" value="${cust.custPnum}" class="form-control" placeholder="Enter name" id="pnum" name="custPnum">
+    </div>
+    <div class="form-group">
+      <label for="money">cust money:</label>
+      <input type="text" value="${cust.custMoney}" class="form-control" placeholder="Enter money" id="money" name="custMoney">
     </div>
     <button type="button" class="btn btn-primary" id="update_btn">Update</button>
     <button type="button" class="btn btn-primary" id="delete_btn">Delete</button>

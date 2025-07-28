@@ -11,10 +11,10 @@
         SELECT * FROM cust
     </select>
     <insert id="insert" parameterType="Cust">
-        INSERT INTO cust VALUES (#{custId},#{custPwd},#{custName}, NOW(), NOW(), #{custPnum}, #{custNick})
+        INSERT INTO cust VALUES (#{custId},#{custPwd},#{custName}, NOW(), NOW(), #{custPnum}, #{custNick}, #{custMoney})
     </insert>
     <update id="update" parameterType="Cust">
-        UPDATE cust SET cust_pwd=#{custPwd},cust_name=#{custName}, cust_update=NOW(), cust_pnum=#{custPnum}, cust_nick=#{custNick} WHERE cust_id=#{custId}
+        UPDATE cust SET cust_pwd=#{custPwd},cust_name=#{custName}, cust_update=NOW(), cust_pnum=#{custPnum}, cust_nick=#{custNick}, cust_money=#{custMoney} WHERE cust_id=#{custId}
     </update>
     <delete id="delete" parameterType="String">
         DELETE FROM cust WHERE cust_id=#{custId}

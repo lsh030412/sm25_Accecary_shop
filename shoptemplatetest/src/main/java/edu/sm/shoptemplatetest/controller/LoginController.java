@@ -70,15 +70,15 @@ public class LoginController {
     }
     @RequestMapping("/mainregisterimpl")
     public String mainregisterimpl(Model model, Cust cust, HttpSession session) throws Exception {
-        log.info("{}, {}, {}, {}, {}", cust.getCustPwd(), cust.getCustName(), cust.getCustId(), cust.getCustPnum(), cust.getCustNick());
+        log.info("{}, {}, {}, {}, {}, {}", cust.getCustPwd(), cust.getCustName(), cust.getCustId(), cust.getCustPnum(), cust.getCustNick(), cust.getCustMoney());
 
-//        try{
-//            custService.register(cust);
-//            session.setAttribute("logincust", cust);
-//        }catch(Exception e){
-//            log.info("error");
-//            return "redirect:/register";
-//        }
+        try{
+            custService.register(cust);
+            session.setAttribute("logincust", cust);
+        }catch(Exception e){
+            log.info("error");
+            return "redirect:/register";
+        }
 
         return "redirect:/";
     }

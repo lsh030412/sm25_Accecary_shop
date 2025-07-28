@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%-- Login Page --%>
-<div class="col-sm-9">
+<div class="col-sm-12" style="margin-bottom: 320px">
     <h2>Login Page</h2>
     <h5 style="padding-bottom: 60px">Input Id, Password</h5>
     <div class="row">
