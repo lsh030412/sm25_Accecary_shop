@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%-- Center Page --%>
-<div class="col-sm-9">
+<div class="col-sm-12">
   <h2>Cust Get Page</h2>
   <table class="table table-bordered">
     <thead>

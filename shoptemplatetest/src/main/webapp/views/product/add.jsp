@@ -3,7 +3,7 @@
 
 
 
-  <div class="col-sm-9">
+  <div class="col-sm-12">
     <h2>Product Add Page</h2>
 <%--    이미지까지 전송하려면 멀티머시기 해줘야 됨--%>
     <form action="/product/addimpl" method="post"enctype="multipart/form-data">
