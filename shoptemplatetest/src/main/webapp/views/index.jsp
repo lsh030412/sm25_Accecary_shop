@@ -75,8 +75,9 @@
                                 <c:when test="${sessionScope.logincust.custId == 'admin'}">
                                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                         <li class="nav-item">
-<%--                                        <a class="nav-link" href="/cust_get/detail?id=${sessionScope.logincust.custId}">${sessionScope.logincust.custName}</a>--%>
-                                            <a class="nav-link" href="/info">${sessionScope.logincust.custName}</a>
+                                            <a class="nav-link" href="/cust_get/charge?id=${sessionScope.logincust.custId}">
+                                                    ${sessionScope.logincust.custName}
+                                            </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="/logout">Logout</a>
@@ -105,7 +106,7 @@
                                             <a class="nav-link" href="/logout">Logout</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/cart">Cart</a>
+                                            <a class="nav-link" href="/cart?id=${sessionScope.logincust.custId}">Cart</a>
                                         </li>
                                     </ul>
                                 </c:otherwise>

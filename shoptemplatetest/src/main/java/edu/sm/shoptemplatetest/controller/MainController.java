@@ -28,6 +28,4 @@ public class MainController {
         model.addAttribute("center", "center");
         return "index";  // index.jsp 렌더링
     }
-
-
 }

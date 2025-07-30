@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.shoptemplatetest.repository.OdRepository">
+
+    <!-- 주문 저장 -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="odId">
+        INSERT INTO orders
+            (cust_id, od_method, od_status, od_qt, name, addr, tel)
+        VALUES
+            (#{custId}, #{odMethod}, #{odStatus}, #{odQt}, #{name}, #{addr}, #{tel})
+    </insert>
+
+    <!-- 주문 상세 저장 -->
+    <insert id="insertDetail">
+        INSERT INTO orderdetail
+            (od_id, product_id, od_detail_qt, od_detail_totalprice)
+        VALUES
+            (#{odId}, #{productId}, #{odDetailQt}, #{odDetailTotalPrice})
+    </insert>
+
+    <!-- 주문 상세 조회 -->
+    <select id="selectDetail" resultType="edu.sm.shoptemplatetest.dto.OdDetail">
+        SELECT * FROM orderdetail WHERE od_id = #{odId}
+    </select>
+
+</mapper>

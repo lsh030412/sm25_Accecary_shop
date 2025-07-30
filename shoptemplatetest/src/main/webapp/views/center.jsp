@@ -12,13 +12,13 @@
         </ul>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/imgs/p8.jpg" class="d-block w-100" style="height: 500px; object-fit: contain; background-color: black;" alt="Los Angeles">
+                <img src="/imgs/b1.jpg" class="d-block w-100" style="height: 500px; object-fit: cover; background-color: black;" alt="bracelet">
             </div>
             <div class="carousel-item">
-                <img src="/imgs/p9.jpg" class="d-block w-100" style="height: 500px; object-fit: contain; background-color: black;" alt="cicago">
+                <img src="/imgs/r5.jpg" class="d-block w-100" style="height: 500px; object-fit: cover; background-color: black;" alt="watch">
             </div>
             <div class="carousel-item">
-                <img src="/imgs/p7.jpg" class="d-block w-100" style="height: 500px; object-fit: contain; background-color: black;" alt="toronto">
+                <img src="/imgs/r1.jpg" class="d-block w-100" style="height: 500px; object-fit: cover; background-color: black;" alt="ring">
             </div>
         </div>
         <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -29,7 +29,8 @@
         </a>
     </div>
   </div>
-    <hr>
+    <hr style="margin-bottom: 40px">
+    <h2 class="text-center" style="margin-bottom: 40px;">ALL</h2>
     <div class="row">
         <c:forEach var="p" items="#{plist}">
             <div class="col-sm-4 mb-4">

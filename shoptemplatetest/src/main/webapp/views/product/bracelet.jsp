@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<div class="col-sm-10">
-  <h2 style="margin-bottom: 40px;">bracelet</h2>
+<div class="col-sm-11">
+  <h2 class="text-center" style="margin-bottom: 40px;">BRACELET</h2>
   <div class="row">
     <c:forEach var="p" items="#{plist}">
       <div class="col-sm-4 mb-4">

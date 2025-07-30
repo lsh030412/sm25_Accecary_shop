@@ -1,7 +1,9 @@
 package edu.sm.shoptemplatetest.controller;
 
 import edu.sm.shoptemplatetest.dto.Cust;
+import edu.sm.shoptemplatetest.dto.Product;
 import edu.sm.shoptemplatetest.service.CustService;
+import edu.sm.shoptemplatetest.service.ProductService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LoginController {
 
+    final ProductService productService;
     final CustService custService;
     // 이름은 유니크
     @RequestMapping("/login")
@@ -25,13 +28,19 @@ public class LoginController {
         model.addAttribute("center", "login");
         return "index";
     }
-@RequestMapping("/logout")
-    public String logout(HttpSession session) {
+    @RequestMapping("/logout")
+    public String logout(HttpSession session, Model model) throws Exception {
+        List<Product> list = null;
+        list = productService.get();
         if(session != null) {
             session.invalidate();
         }
+        model.addAttribute("plist", list);
+        model.addAttribute("left", "nullleft");
+        model.addAttribute("center", "center");
         return "index";
     }
+
     @RequestMapping("/loginimpl")
     // ?id=aaaaa&pwd=xxxxx
     public String loginimpl(Model model,
