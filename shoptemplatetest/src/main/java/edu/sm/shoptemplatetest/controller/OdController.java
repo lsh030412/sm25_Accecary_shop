@@ -114,5 +114,24 @@ public class OdController {
         return "redirect:/";
     }
 
+    @GetMapping("/list")
+    public String listOrders(HttpSession session, Model model) throws Exception {
+        Cust loginCust = (Cust) session.getAttribute("logincust");
+        if (loginCust == null) {
+            return "redirect:/login";
+        }
+
+        // 주문 헤더 가져오기
+        List<Od> odList = odService.getOrdersByCust(loginCust.getCustId());
+        model.addAttribute("odList", odList);
+
+        // (필요하다면) 각 주문별 상세도 가져와서 뷰에 넘길 수 있습니다.
+        // 예: Map<Integer,List<OdDetail>> detailMap = ...
+        // model.addAttribute("detailMap", detailMap);
+        model.addAttribute("left", "nullleft");
+        model.addAttribute("center", "od/list");
+        return "index";   // /WEB-INF/views/od/list.jsp 를 렌더링
+    }
+
 
 }

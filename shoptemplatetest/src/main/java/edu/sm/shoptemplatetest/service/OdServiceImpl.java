@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class OdServiceImpl implements OdService {
@@ -23,5 +25,9 @@ public class OdServiceImpl implements OdService {
             d.setOdId(od.getOdId());
             odRepository.insertDetail(d);
         }
+    }
+    @Override
+    public List<Od> getOrdersByCust(String custId) throws Exception {
+        return odRepository.findByCustId(custId);
     }
 }

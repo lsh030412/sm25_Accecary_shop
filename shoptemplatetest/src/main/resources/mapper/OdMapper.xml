@@ -25,4 +25,23 @@
         SELECT * FROM orderdetail WHERE od_id = #{odId}
     </select>
 
+    <!-- 고객별 주문 헤더 조회 추가 -->
+    <select id="findByCustId"
+            parameterType="string"
+            resultType="edu.sm.shoptemplatetest.dto.Od">
+        SELECT
+            od_id           AS odId,
+            cust_id         AS custId,
+            od_date         AS odDate,
+            od_method       AS odMethod,
+            od_status       AS odStatus,
+            od_qt           AS odQt,
+            name            AS name,
+            addr            AS addr,
+            tel             AS tel
+        FROM orders
+        WHERE cust_id = #{custId}
+        ORDER BY od_date DESC
+    </select>
+
 </mapper>
