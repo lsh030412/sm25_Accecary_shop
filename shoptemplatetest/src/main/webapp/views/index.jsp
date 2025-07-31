@@ -75,7 +75,7 @@
                                 <c:when test="${sessionScope.logincust.custId == 'admin'}">
                                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/cust_get/charge?id=${sessionScope.logincust.custId}">
+                                            <a class="nav-link" href="/cust_get/myinfo?id=${sessionScope.logincust.custId}">
                                                     ${sessionScope.logincust.custName}
                                             </a>
                                         </li>

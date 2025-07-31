@@ -146,13 +146,23 @@
 
       <div class="modal-body text-center">
         <p>계속 쇼핑하시겠습니까?</p>
-        <p class="text-muted">※ Add Cart : 쇼핑 계속<br>※ Go Cart : 장바구니로 이동</p>
+        <p class="text-muted">
+          ※ Add Cart : 쇼핑 계속<br>
+          ※ Go Cart  : 장바구니로 이동
+        </p>
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="add_btn">Add Cart</button>
-        <button type="button" class="btn btn-primary" id="go_btn">Go Cart</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- data-dismiss 속성 추가 -->
+        <button type="button" class="btn btn-success" id="add_btn" data-dismiss="modal">
+          Add Cart
+        </button>
+        <button type="button" class="btn btn-primary" id="go_btn" data-dismiss="modal">
+          Go Cart
+        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
       </div>
 
     </div>

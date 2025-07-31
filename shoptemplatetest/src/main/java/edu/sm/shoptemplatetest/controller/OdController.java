@@ -1,6 +1,7 @@
 package edu.sm.shoptemplatetest.controller;
 
 import edu.sm.shoptemplatetest.dto.*;
+import edu.sm.shoptemplatetest.service.CartService;
 import edu.sm.shoptemplatetest.service.OdService;
 import edu.sm.shoptemplatetest.service.CustService;
 import jakarta.servlet.http.HttpSession;
@@ -108,6 +109,7 @@ public class OdController {
         return "index";
     }
 
+
     // 3) 직접 /od/complete GET 요청 차단
     @GetMapping("/complete")
     public String complete() {
@@ -132,6 +134,4 @@ public class OdController {
         model.addAttribute("center", "od/list");
         return "index";   // /WEB-INF/views/od/list.jsp 를 렌더링
     }
-
-
 }

@@ -5,6 +5,7 @@ import edu.sm.shoptemplatetest.frame.SmService;
 import edu.sm.shoptemplatetest.repository.CartRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -44,5 +45,10 @@ public class CartService implements SmService<Cart, Cart> {
 
     public List<Cart> findByCustId(String custId) throws Exception {
         return cartRepository.findByCustId(custId);
+    }
+
+    @Transactional
+    public void clearCart(String custId) throws Exception {
+        cartRepository.deleteByCustId(custId);
     }
 }

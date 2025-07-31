@@ -24,5 +24,9 @@
     <delete id="delete" parameterType="Cart">
         DELETE FROM cart WHERE cust_id=#{custId} AND product_id = #{productId}
     </delete>
+    <delete id="deleteByCustId" parameterType="string">
+        DELETE FROM cart
+        WHERE cust_id = #{custId}
+    </delete>
 
 </mapper>

@@ -50,6 +50,16 @@ public class CustController {
         return "index";
     }
 
+    @RequestMapping("/myinfo")
+    public String myinfo(Model model, @RequestParam("id") String id) throws Exception {
+        Cust cust = null;
+        cust = custService.get(id);
+        model.addAttribute("cust", cust);
+        model.addAttribute("left", "nullleft");
+        model.addAttribute("center", dir+"myinfo");
+        return "index";
+    }
+
     @RequestMapping("/updateimpl")
     public String udpateimpl(Model model, Cust cust) throws Exception {
         custService.modify(cust);

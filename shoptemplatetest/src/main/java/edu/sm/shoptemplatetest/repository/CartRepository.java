@@ -21,4 +21,5 @@ public interface CartRepository extends SmRepository<Cart, Cart> {
 //    파인드로 sql이 동작하는거다
 //    해당 아이디가 입력한 카트정보를 조회한다 crud랑 별개의 동작이다
     List<Cart> findByCustId(String custId) throws Exception;
+    void deleteByCustId(String custId) throws Exception;
 }
