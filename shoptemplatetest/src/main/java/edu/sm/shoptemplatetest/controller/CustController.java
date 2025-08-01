@@ -37,7 +37,7 @@ public class CustController {
     @RequestMapping("/delete")
     public String delete(Model model, @RequestParam("id") String id) throws Exception {
         custService.remove(id);
-        return "redirect:/cust_get/get";
+        return "redirect:/cust_get";
     }
 
     @RequestMapping("/detail")

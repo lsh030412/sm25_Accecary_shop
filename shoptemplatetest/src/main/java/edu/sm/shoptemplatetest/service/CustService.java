@@ -3,16 +3,18 @@ package edu.sm.shoptemplatetest.service;
 import edu.sm.shoptemplatetest.dto.Cust;
 import edu.sm.shoptemplatetest.frame.SmService;
 import edu.sm.shoptemplatetest.repository.CustRepository;
+import edu.sm.shoptemplatetest.repository.OdRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-//자동적으로 만들어준다 아래 커스트 레파지토리 객체를
 @RequiredArgsConstructor
 public class CustService implements SmService<Cust, String> {
 
     final CustRepository custRepository;
+    final OdRepository odRepository;
+
 
     @Override
     public void register(Cust cust) throws Exception {
@@ -25,8 +27,10 @@ public class CustService implements SmService<Cust, String> {
     }
 
     @Override
-    public void remove(String s) throws Exception {
-        custRepository.delete(s);
+    public void remove(String custId) throws Exception {
+        odRepository.deleteDetailByCustId(custId); // 1단계: orderdetail 삭제
+        odRepository.deleteByCustId(custId);       // 2단계: orders 삭제
+        custRepository.delete(custId);             // 3단계: 고객 삭제
     }
 
     @Override

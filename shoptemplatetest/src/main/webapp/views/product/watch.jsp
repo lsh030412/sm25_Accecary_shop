@@ -16,7 +16,7 @@
                 <fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}" />
               </p>
             </div>
-            <a href="/product/see?id=${p.productId}" class="btn btn-primary mt-auto">See</a>
+            <a href="/product/see?id=${p.productId}" class="btn btn-secondary mt-auto">See</a>
           </div>
         </div>
       </div>

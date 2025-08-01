@@ -44,4 +44,16 @@
         ORDER BY od_date DESC
     </select>
 
+    <!-- 먼저 orderdetail 삭제 -->
+    <delete id="deleteDetailByCustId" parameterType="String">
+        DELETE FROM orderdetail
+        WHERE od_id IN (
+            SELECT od_id FROM orders WHERE cust_id = #{custId}
+        )
+    </delete>
+
+    <!-- 그 다음 주문 삭제 -->
+    <delete id="deleteByCustId" parameterType="String">
+        DELETE FROM orders WHERE cust_id = #{custId}
+    </delete>
 </mapper>

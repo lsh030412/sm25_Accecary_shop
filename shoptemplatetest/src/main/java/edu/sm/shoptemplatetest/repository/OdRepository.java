@@ -13,6 +13,12 @@ import java.util.List;
 @Mapper
 public interface OdRepository extends SmRepository<Od, Integer> {
     void insertDetail(OdDetail detail) throws Exception;
+
     List<OdDetail> selectDetail(int odId) throws Exception; /** 고객별 주문 헤더 조회 추가 */
+
+    void deleteDetailByCustId(String custId); // 먼저 실행
+
+    void deleteByCustId(String custId);
+
     List<Od> findByCustId(@Param("custId") String custId) throws Exception;
 }

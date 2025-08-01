@@ -1,61 +1,64 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <script>
   let custDetail = {
-    init:function() {
-      // 폼과 폼사이의 데이트 전송
-      $('#cust_update_form > #update_btn').click(()=>{
-        let c = confirm("수정 하시겠습니까 ?");
-        if(c == true){
+    init: function () {
+      $('#cust_update_form > #update_btn').click(() => {
+        if (confirm("수정 하시겠습니까?")) {
           $('#cust_update_form').attr("method", "post");
           $('#cust_update_form').attr("action", "/cust_get/updateimpl");
           $('#cust_update_form').submit();
         }
       });
-      // 아이디만 전송하면 됨
-      $('#cust_update_form > #delete_btn').click(()=>{
-        let c = confirm("삭제하시겠습니까?");
-        if(c == true) {
+
+      $('#cust_update_form > #delete_btn').click(() => {
+        if (confirm("삭제하시겠습니까?")) {
           let id = $('#id').val();
-          location.href='/cust_get/delete?id='+id;
+          location.href = '/cust_get/delete?id=' + id;
         }
       });
     }
-  }
-  $().ready(()=> {
+  };
+  $().ready(() => {
     custDetail.init();
-  })
+  });
 </script>
-<%-- detail Page --%>
-<div class="col-sm-12">
-  <h2>Cust Detail Page</h2>
-  <form id="cust_update_form">
-    <div class="form-group">
-      <label for="id">Id:</label>
-      <input type="text" readonly value="${cust.custId}" class="form-control" placeholder="Enter id" id="id" name="custId">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" value="${cust.custPwd}" class="form-control" placeholder="Enter password" id="pwd" name="custPwd">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Name:</label>
-      <input type="text" value="${cust.custName}" class="form-control" placeholder="Enter name" id="name" name="custName">
-    </div>
-    <div class="form-group">
-      <label for="nick">Nick:</label>
-      <input type="text" value="${cust.custNick}" class="form-control" placeholder="Enter name" id="nick" name="custNick">
-    </div>
-    <div class="form-group">
-      <label for="pnum">Phone number:</label>
-      <input type="text" value="${cust.custPnum}" class="form-control" placeholder="Enter name" id="pnum" name="custPnum">
-    </div>
-    <button type="button" class="btn btn-primary" id="update_btn">Update</button>
-    <button type="button" class="btn btn-primary" id="delete_btn">Delete</button>
-    <button type="button"
-            class="btn btn-primary"
-            onclick="location.href='${pageContext.request.contextPath}/cust_get/charge?id=${sessionScope.logincust.custId}'">
-      charge
-    </button>
-  </form>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
+  <div class="card p-5 shadow" style="width: 550px;">
+    <h2 class="text-center mb-4">내 정보 수정</h2>
+    <form id="cust_update_form">
+      <div class="form-group mb-3">
+        <label for="id">아이디</label>
+        <input type="text" readonly class="form-control" id="id" name="custId" value="${cust.custId}">
+      </div>
+      <div class="form-group mb-3">
+        <label for="pwd">비밀번호</label>
+        <input type="password" class="form-control" id="pwd" name="custPwd" value="${cust.custPwd}">
+      </div>
+      <div class="form-group mb-3">
+        <label for="name">이름</label>
+        <input type="text" class="form-control" id="name" name="custName" value="${cust.custName}">
+      </div>
+      <div class="form-group mb-3">
+        <label for="nick">닉네임</label>
+        <input type="text" class="form-control" id="nick" name="custNick" value="${cust.custNick}">
+      </div>
+      <div class="form-group mb-3">
+        <label for="pnum">전화번호</label>
+        <input type="text" class="form-control" id="pnum" name="custPnum" value="${cust.custPnum}">
+      </div>
+
+      <div class="d-grid gap-2">
+        <button type="button" class="btn btn-secondary" id="update_btn">정보 수정</button>
+        <button type="button" class="btn btn-danger" id="delete_btn">회원 탈퇴</button>
+        <button type="button"
+                class="btn btn-info text-white"
+                onclick="location.href='${pageContext.request.contextPath}/cust_get/charge?id=${sessionScope.logincust.custId}'">
+          포인트 충전
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
